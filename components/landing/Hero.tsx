@@ -1,126 +1,57 @@
-import React from "react";
+'use client';
 
-const SUPPORTED_COUNTRIES = [
-  {
-    icon: "https://ext.same-assets.com/2921571504/1743763944.svg",
-    label: "United States",
-  },
-  {
-    icon: "https://ext.same-assets.com/2921571504/1354271685.svg",
-    label: "Canada",
-  },
-  {
-    icon: "https://ext.same-assets.com/2921571504/395157150.svg",
-    label: "United Kingdom",
-  },
-  {
-    icon: "https://ext.same-assets.com/2921571504/1443725800.svg",
-    label: "Australia",
-  },
-];
+import React from 'react';
 
-const PARTNER_LOGOS = [
-  "https://ext.same-assets.com/2921571504/1762150431.webp",
-  "https://ext.same-assets.com/2921571504/4052644499.webp",
-  "https://ext.same-assets.com/2921571504/3299751621.webp",
-  "https://ext.same-assets.com/2921571504/2940000656.webp",
-  "https://ext.same-assets.com/2921571504/2512851337.webp",
-];
-
-const DEMO_VIDEOS = [
-  "https://images.pexels.com/photos/7676399/pexels-photo-7676399.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  "https://images.pexels.com/photos/32070496/pexels-photo-32070496/free-photo-of-home-podcast-recording-in-cozy-setting.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  "https://images.pexels.com/photos/12433027/pexels-photo-12433027.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  "https://images.pexels.com/photos/18015232/pexels-photo-18015232/free-photo-of-a-man-holding-a-camera-and-a-tripod.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+const SOCIAL_PLATFORMS = [
+  'TikTok', 'Meta', 'Youtube', 'Instagram', 'Amazon'
 ];
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative bg-[#f7f8fa] pt-40 pb-20 border-b border-[#e5e6ea] overflow-hidden">
-      <div className="container mx-auto px-4 flex flex-col items-center text-center">
-        {/* Countries */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {SUPPORTED_COUNTRIES.map((c) => (
-            <div
-              key={c.label}
-              className="flex items-center gap-2 bg-white rounded-full px-3 py-1.5 border border-[#e5e6ea] shadow-sm text-sm font-medium transform hover:scale-105 transition-transform"
-            >
-              <img src={c.icon} alt={c.label} className="h-5 w-5" />
-              <span>{c.label}</span>
-            </div>
-          ))}
-        </div>
-
-        {/* Title & subtitle */}
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6 text-[#42354e] max-w-4xl mx-auto animate-fade-up">
-          Excel on paid social with{" "}
-          <span className="text-[#5b21b6] relative">
-            authentic creator videos
-            <svg
-              className="absolute -bottom-2 left-0 w-full"
-              viewBox="0 0 358 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M2 8.5C75.5 4 151.5 4 225.5 4C299.5 4 150 4 356 4"
-                stroke="#5b21b6"
-                strokeWidth="4"
-                strokeLinecap="round"
-              />
-            </svg>
-          </span>
-        </h1>
-        <p className="mb-8 max-w-2xl text-lg md:text-xl mx-auto text-[#6f6290] animate-fade-up animate-delay-150">
-          200,000+ videos created. 22,000 brands served. You too can match with
-          our talented creators and get authentic videos optimized for social
-          ads performance.
-        </p>
-
-        {/* CTA */}
-        <a
-          href="#signup"
-          className="inline-block bg-[#5b21b6] hover:bg-[#4a1d96] text-white font-semibold px-8 py-4 rounded-full text-lg shadow-lg transition-all duration-300 hover:scale-105 transform hover:shadow-xl mb-16 animate-fade-up animate-delay-300"
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
         >
-          Start creating videos
-        </a>
-
-        {/* Video grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl w-full mx-auto">
-          {DEMO_VIDEOS.map((image, i) => (
-            <div
-              key={i}
-              className="relative rounded-2xl overflow-hidden shadow-xl transform hover:scale-105 transition-transform duration-300 aspect-[9/16] group"
-            >
-              <img
-                src={image}
-                alt="Creator content"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                <span className="text-white text-sm font-medium">
-                  Watch video
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+          <source src="https://videos.pexels.com/video-files/6948549/6948549-uhd_2560_1440_24fps.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/50"></div>
       </div>
 
-      {/* Partner logos */}
-      <div className="max-w-6xl mx-auto px-4 mt-20">
-        <p className="text-center text-sm text-[#6f6290] mb-8">
-          Trusted by leading brands worldwide
-        </p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
-          {PARTNER_LOGOS.map((logo, idx) => (
-            <img
-              key={idx}
-              src={logo}
-              alt="brand logo"
-              className="h-8 md:h-10 grayscale opacity-70 hover:opacity-100 hover:grayscale-0 transition-all duration-300"
-            />
+      {/* Content */}
+      <div className="relative container mx-auto px-4 text-center text-white">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-up leading-tight">
+          Thousands of Creators.<br />
+          <span className="text-[#4B9FD6]">One Goal:</span> Your Success.
+        </h1>
+        
+        <div className="flex flex-wrap justify-center gap-6 mb-10 animate-fade-up animate-delay-150">
+          {SOCIAL_PLATFORMS.map((platform) => (
+            <div key={platform} className="text-sm md:text-base font-medium flex items-center">
+              {platform}
+              {platform !== SOCIAL_PLATFORMS[SOCIAL_PLATFORMS.length - 1] && 
+                <span className="ml-6 h-1 w-1 rounded-full bg-[#4B9FD6] opacity-70"></span>}
+            </div>
           ))}
+        </div>
+
+        <a
+          href="#signup"
+          className="btn-primary inline-block bg-[#4B9FD6] text-white font-semibold px-10 py-4 rounded-full text-lg shadow-xl transition-all duration-300 hover:scale-105 transform hover:shadow-2xl animate-fade-up animate-delay-300 hover:bg-[#3D8CBF]"
+        >
+          Start creating content
+        </a>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
       </div>
     </section>

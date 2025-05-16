@@ -1,93 +1,102 @@
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
 
 const ComparisonSection: React.FC = () => {
-  const plans = [
-    {
-      title: "Basic",
-      price: "$29",
-      features: [
-        "Basic analytics dashboard",
-        "Up to 1,000 monthly active users",
-        "Standard support",
-        "Basic integrations",
-        "Community access"
-      ]
-    },
-    {
-      title: "Pro",
-      price: "$99",
-      featured: true,
-      features: [
-        "Advanced analytics",
-        "Up to 10,000 monthly active users",
-        "Priority support",
-        "Advanced integrations",
-        "API access",
-        "Custom branding",
-        "Team collaboration"
-      ]
-    },
-    {
-      title: "Enterprise",
-      price: "Custom",
-      features: [
-        "Enterprise-grade analytics",
-        "Unlimited monthly active users",
-        "24/7 dedicated support",
-        "Custom integrations",
-        "Advanced API access",
-        "White-labeling",
-        "Advanced security features",
-        "SLA guarantee"
-      ]
-    }
-  ];
-
   return (
-    <section className="bg-white py-14 border-b border-[#e5e6ea]">
+    <section className="bg-white py-20" id="services">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-center mb-8 text-[#42354e]">Why Sensei?</h2>
-        <p className="text-center mb-12 text-lg">See why Sensei is the smarter choice for high-performing videos.</p>
-        <div className="overflow-x-auto">
-          <table className="min-w-[740px] mx-auto w-full bg-[#f7f8fa] rounded-2xl shadow-sm">
-            <thead>
-              <tr className="text-left text-[#42354e] text-base border-b border-[#e5e6ea]">
-                <th className="p-4 font-semibold"> </th>
-                <th className="p-4 font-semibold text-[#5b21b6]">Sensei</th>
-                <th className="p-4 font-semibold">Influencers</th>
-                <th className="p-4 font-semibold">Production studio</th>
-              </tr>
-            </thead>
-            <tbody className="text-[#42354e]">
-              {[
-                {feature: 'Cost-effective', ugcSensei: true, infl: false, studio: false},
-                {feature: 'Fast', ugcSensei: true, infl: false, studio: false},
-                {feature: 'Easy', ugcSensei: true, infl: false, studio: false},
-                {feature: 'Customizable', ugcSensei: true, infl: true, studio: true},
-                {feature: 'Scalable', ugcSensei: true, infl: false, studio: true},
-                {feature: 'Authentic', ugcSensei: true, infl: true, studio: false},
-                {feature: 'Ready-to-launch', ugcSensei: true, infl: false, studio: true},
-              ].map((row, idx) => (
-                <tr key={row.feature} className="border-b border-[#e5e6ea] last:border-0">
-                  <td className="p-4 font-medium">{row.feature}</td>
-                  {[row.ugcSensei, row.infl, row.studio].map((val, i) => (
-                    <td className="p-4 text-center" key={i}>
-                      {val ? (
-                        <span className="inline-block w-6 h-6 rounded-full bg-[#5b21b6] text-white text-lg flex items-center justify-center">&#10003;</span>
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            Why choose us?
+          </h2>
+          <p className="text-lg text-gray-600">
+            See how we compare to traditional content creation methods
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[740px] bg-white rounded-2xl shadow-lg border border-gray-100">
+              <thead>
+                <tr className="border-b border-gray-100">
+                  <th className="p-6 text-left font-semibold text-gray-600 w-1/4"></th>
+                  <th className="p-6 text-center font-bold text-[#4B9FD6] w-1/4 bg-[#4B9FD6]/5">
+                    Our Platform
+                  </th>
+                  <th className="p-6 text-center font-semibold text-gray-600 w-1/4">
+                    Influencers
+                  </th>
+                  <th className="p-6 text-center font-semibold text-gray-600 w-1/4">
+                    Production Studio
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  {feature: 'Cost-effective', platform: true, infl: false, studio: false},
+                  {feature: 'Fast turnaround', platform: true, infl: false, studio: false},
+                  {feature: 'Easy process', platform: true, infl: false, studio: false},
+                  {feature: 'Customizable', platform: true, infl: true, studio: true},
+                  {feature: 'Scalable content', platform: true, infl: false, studio: true},
+                  {feature: 'Authentic feel', platform: true, infl: true, studio: false},
+                  {feature: 'Ready to launch', platform: true, infl: false, studio: true},
+                ].map((row, idx) => (
+                  <tr 
+                    key={row.feature} 
+                    className={`border-b border-gray-100 ${idx % 2 === 0 ? 'bg-gray-50/50' : 'bg-white'}`}
+                  >
+                    <td className="p-6 font-medium text-gray-900">{row.feature}</td>
+                    <td className="p-6 text-center">
+                      {row.platform ? (
+                        <div className="flex justify-center">
+                          <span className="w-8 h-8 rounded-full bg-[#4B9FD6] text-white flex items-center justify-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          </span>
+                        </div>
                       ) : (
-                        <span className="inline-block w-6 h-6 rounded-full bg-[#ede8fd] text-[#b88a59] text-lg flex items-center justify-center">&mdash;</span>
+                        <span className="inline-block w-8 h-8 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center">—</span>
                       )}
                     </td>
-                  ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                    <td className="p-6 text-center">
+                      {row.infl ? (
+                        <div className="flex justify-center">
+                          <span className="w-8 h-8 rounded-full bg-[#4B9FD6] text-white flex items-center justify-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          </span>
+                        </div>
+                      ) : (
+                        <span className="inline-block w-8 h-8 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center">—</span>
+                      )}
+                    </td>
+                    <td className="p-6 text-center">
+                      {row.studio ? (
+                        <div className="flex justify-center">
+                          <span className="w-8 h-8 rounded-full bg-[#4B9FD6] text-white flex items-center justify-center">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                              <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg>
+                          </span>
+                        </div>
+                      ) : (
+                        <span className="inline-block w-8 h-8 rounded-full bg-gray-100 text-gray-400 flex items-center justify-center">—</span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div className="flex justify-center mt-8">
-          <a href="#try-now" className="inline-block bg-[#5b21b6] hover:bg-[#9b6074] text-white font-semibold px-7 py-3 rounded-full text-base shadow transition-colors">
-            Try Sensei now
+
+        <div className="flex justify-center mt-12">
+          <a 
+            href="#get-started" 
+            className="btn-primary bg-[#4B9FD6] text-white font-semibold px-12 py-4 rounded-full text-lg shadow-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+          >
+            Get started now
           </a>
         </div>
       </div>

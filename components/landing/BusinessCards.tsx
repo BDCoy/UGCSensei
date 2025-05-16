@@ -1,88 +1,81 @@
-import React from "react";
-import { Building2, Users2, Briefcase } from "lucide-react";
+import React from 'react';
+import { Building2, Users2 } from 'lucide-react';
 
 const BusinessCards: React.FC = () => {
-  const cards = [
-    {
-      icon: <Building2 className="w-8 h-8 text-indigo-600" />,
-      title: "Enterprise Solutions",
-      description:
-        "Tailored solutions for large organizations with complex needs and scalable infrastructure requirements.",
-    },
-    {
-      icon: <Users2 className="w-8 h-8 text-indigo-600" />,
-      title: "Team Collaboration",
-      description:
-        "Powerful tools for teams to work together seamlessly across departments and locations.",
-    },
-    {
-      icon: <Briefcase className="w-8 h-8 text-indigo-600" />,
-      title: "Business Growth",
-      description:
-        "Strategic features designed to accelerate your business growth and market presence.",
-    },
-  ];
-
   return (
-    <section className="bg-[#f7f8fa] py-14 border-b border-[#e5e6ea]">
+    <section className="bg-gray-50 py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-2xl font-bold text-center mb-8 text-[#42354e] ">
-          On-demand videos for every business
-        </h2>
-        <p className="text-center mb-10 max-w-3xl mx-auto text-lg">
-          Flexible video creation that scales with your needs, no matter your
-          size or industry.
-        </p>
-        <div className="flex flex-col md:flex-row gap-8 max-w-3xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            On-demand videos for every business
+          </h2>
+          <p className="text-lg text-gray-600">
+            Flexible video creation that scales with your needs, no matter your size or industry
+          </p>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
           {/* For Brands */}
-          <div className="bg-white rounded-2xl p-8 flex-1 flex flex-col items-center shadow-md">
-            <img
-              src="https://ext.same-assets.com/2921571504/2445797720.svg"
-              alt="brands"
-              className="h-10 mb-3"
-            />
-            <h3 className="font-semibold text-lg mb-1">For brands</h3>
-            <p className="text-[#6f6290] text-base mb-4 text-center">
-              Get scroll-stopping videos, ready to use and optimized for TikTok
-              and Meta. Choose from a variety of creators and templates, test
-              different styles, and find your winning formula.
+          <div className="card-hover flex-1 bg-white rounded-2xl p-8 shadow-md flex flex-col items-center">
+            <div className="bg-[#4B9FD6]/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+              <Building2 className="w-8 h-8 text-[#4B9FD6]" />
+            </div>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">For brands</h3>
+            <p className="text-gray-600 text-center mb-6">
+              Get scroll-stopping videos, ready to use and optimized for TikTok and Meta. 
+              Choose from a variety of creators and templates, test different styles, 
+              and find your winning formula.
             </p>
-            <a
-              href="#brands-learn"
-              className="inline-flex gap-2 items-center text-[#5b21b6] font-semibold hover:underline"
+            <a 
+              href="#brands-learn" 
+              className="group inline-flex items-center gap-2 text-[#4B9FD6] font-semibold hover:underline"
             >
-              Learn more{" "}
-              <img
-                src="https://ext.same-assets.com/2921571504/2274204440.svg"
-                alt="arrow"
-                className="h-5"
-              />
+              Learn more
+              <svg 
+                className="w-5 h-5 transition-transform group-hover:translate-x-1" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </a>
           </div>
+
           {/* For Agencies */}
-          <div className="bg-white rounded-2xl p-8 flex-1 flex flex-col items-center shadow-md">
-            <img
-              src="https://ext.same-assets.com/2921571504/2445797720.svg"
-              alt="agencies"
-              className="h-10 mb-3"
-            />
-            <h3 className="font-semibold text-lg mb-1">For agencies</h3>
-            <p className="text-[#6f6290] text-base mb-4 text-center">
-              Save time, money, and resources with Sensei's streamlined
-              video production platform. Access a vast network of creators,
-              manage projects effortlessly, and deliver stunning results to your
-              clients.
+          <div className="card-hover flex-1 bg-white rounded-2xl p-8 shadow-md flex flex-col items-center">
+            <div className="bg-[#4B9FD6]/10 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+              <Users2 className="w-8 h-8 text-[#4B9FD6]" />
+            </div>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">For agencies</h3>
+            <p className="text-gray-600 text-center mb-6">
+              Save time, money, and resources with our streamlined video production platform. 
+              Access a vast network of creators, manage projects effortlessly, and deliver 
+              stunning results to your clients.
             </p>
-            <a
-              href="#agencies-learn"
-              className="inline-flex gap-2 items-center text-[#5b21b6] font-semibold hover:underline"
+            <a 
+              href="#agencies-learn" 
+              className="group inline-flex items-center gap-2 text-[#4B9FD6] font-semibold hover:underline"
             >
-              Learn more{" "}
-              <img
-                src="https://ext.same-assets.com/2921571504/2274204440.svg"
-                alt="arrow"
-                className="h-5"
-              />
+              Learn more
+              <svg 
+                className="w-5 h-5 transition-transform group-hover:translate-x-1" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </a>
           </div>
         </div>

@@ -1,13 +1,20 @@
-import './globals.css';
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import { ThemeProvider } from "@/components/ui/theme-provider";
+import "./globals.css";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Next.js Authentication App',
-  description: 'A Next.js application with authentication and dashboard',
+  title: "UGC Sensei – Connect Brands with Creators for Authentic Content",
+  description:
+    "UGC Sensei is the leading platform where brands find talented creators to produce authentic, high-performing user-generated content for TikTok, Instagram, YouTube, and more.",
+  keywords: [
+    "UGC platform",
+    "creator marketing",
+    "influencer content",
+    "brand collaborations",
+    "user-generated content",
+  ].join(", "),
 };
 
 export default function RootLayout({
@@ -17,16 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
