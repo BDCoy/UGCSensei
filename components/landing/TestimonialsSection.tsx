@@ -67,99 +67,86 @@ export const TestimonialsSection = (): JSX.Element => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-   <Card className="
-      relative z-10 flex flex-col justify-start items-start gap-[30px] p-[30px] sm:p-[50px]
-      rounded-[20px] bg-[#175779] shadow-[3px_3px_10px_0_rgba(0,0,0,0.1)] w-full overflow-hidden
-    ">
+    <Card className="relative z-10 flex flex-col justify-start items-start gap-6 sm:gap-8 lg:gap-[30px] p-6 sm:p-8 lg:p-[50px] rounded-[20px] bg-[#175779] shadow-lg w-full overflow-hidden">
       <div className="bg-[url('/landing/grid-1-1.png')] bg-cover absolute top-0 bottom-0 left-0 right-0 opacity-5 -z-10"></div>
 
       {/* Header Text */}
-      <div className="flex flex-col justify-start items-start gap-3 sm:gap-5 w-full max-w-full sm:max-w-[1150px] px-0 sm:px-0">
-        <p className="text-2xl sm:text-4xl font-bold text-left text-white">
+      <div className="flex flex-col justify-start items-start gap-3 sm:gap-5 w-full">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
           Real Success with the UGC Sensei Approach.
-        </p>
-        <p className="text-base sm:text-lg text-left text-white max-w-full sm:max-w-[1150px]">
+        </h2>
+        <p className="text-base sm:text-lg text-white font-nunito">
           Join thousands of successful brands who have transformed their social media presence.
         </p>
       </div>
 
       {/* Divider Line */}
-      <svg
-        width="100%"
-        height="1"
-        viewBox="0 0 1150 1"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="w-full max-w-full sm:max-w-[1150px]"
-        preserveAspectRatio="none"
-      >
-        <line x1="0" y1="0.5" x2="1150" y2="0.5" stroke="#3B35E0" />
-      </svg>
+      <div className="w-full h-px bg-[#3B35E0] opacity-30" />
 
       {/* Main Content */}
-      <div className="flex flex-col sm:flex-row justify-center items-center sm:items-start gap-10 sm:gap-20 w-full max-w-full sm:max-w-[1150px]">
+      <div className="flex flex-col lg:flex-row justify-center items-start gap-8 sm:gap-10 lg:gap-20 w-full">
         {/* Video with Play Button */}
-        <div className="relative flex-shrink-0 w-full sm:w-[335px]">
+        <div className="relative w-full lg:w-[335px] flex-shrink-0">
           <img
             src={currentTestimonial.author.video}
             alt={`${currentTestimonial.company} video`}
-            className="w-full h-auto max-h-[400px] lg:max-h-full lg:h-full sm:h-[603px] rounded-[20px] object-cover"
+            className="w-full h-auto rounded-[20px] object-cover aspect-[3/4]"
           />
           <div className="flex justify-center items-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <img
               src="/landing/playfill-1.svg"
               alt="Play button"
-              className="w-[46px] h-[39px] sm:w-[71px] sm:h-[75px]"
+              className="w-[46px] h-[46px] sm:w-[60px] sm:h-[60px] lg:w-[75px] lg:h-[75px]"
             />
           </div>
         </div>
 
         {/* Testimonial Text & Info */}
-        <div className="flex flex-col justify-start items-start flex-grow gap-8 w-full max-w-full sm:max-w-[735px] px-0 sm:px-0">
+        <div className="flex flex-col justify-start items-start flex-grow gap-6 sm:gap-8">
           {/* Company & Navigation */}
           <div className="flex justify-between items-center w-full">
-            <p className="text-xl sm:text-[28px] font-bold text-white">
+            <p className="text-xl sm:text-2xl lg:text-[28px] font-bold text-white">
               {currentTestimonial.company}
             </p>
-            <div className="flex items-center gap-6 sm:gap-[30px]">
+            <div className="flex items-center gap-4 sm:gap-6">
               <button
                 onClick={prevSlide}
-                className="p-2 hover:bg-white/10 rounded-full"
+                className="p-2 hover:bg-white/10 rounded-full transition-colors"
                 aria-label="Previous testimonial"
               >
                 <img
                   src="/landing/lucide-move-left.svg"
                   alt="Previous"
-                  className="w-[24px] h-[24px] sm:w-[34px] sm:h-[34px]"
+                  className="w-6 h-6 sm:w-8 sm:h-8 lg:w-[34px] lg:h-[34px]"
                 />
               </button>
               <button
                 onClick={nextSlide}
-                className="p-2 hover:bg-white/10 rounded-full"
+                className="p-2 hover:bg-white/10 rounded-full transition-colors"
                 aria-label="Next testimonial"
               >
                 <img
                   src="/landing/lucide-move-right.svg"
                   alt="Next"
-                  className="w-[24px] h-[24px] sm:w-[34px] sm:h-[34px]"
+                  className="w-6 h-6 sm:w-8 sm:h-8 lg:w-[34px] lg:h-[34px]"
                 />
               </button>
             </div>
           </div>
 
           {/* Quote */}
-          <p className="text-base sm:text-[22px] text-white leading-relaxed">
+          <p className="text-base font-nunito sm:text-lg lg:text-xl text-white leading-relaxed">
             {currentTestimonial.quote}
           </p>
 
           {/* Author Info */}
-          <div className="flex items-center gap-4 sm:gap-5 w-full">
+          <div className="flex items-center gap-4 sm:gap-5">
             <img
               src={currentTestimonial.author.image}
               alt={currentTestimonial.author.name}
               className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] rounded-full object-cover"
             />
-            <div className="flex flex-col gap-[4px]">
+            <div className="flex flex-col gap-1">
               <img
                 src="/landing/5-stars-1-3.png"
                 alt="5 stars rating"
@@ -168,26 +155,28 @@ export const TestimonialsSection = (): JSX.Element => {
               <p className="text-base sm:text-lg font-semibold text-white">
                 {currentTestimonial.author.name}
               </p>
-              <p className="text-xs sm:text-xs text-white">
+              <p className="text-xs text-white font-nunito">
                 {currentTestimonial.author.position}
               </p>
             </div>
           </div>
 
           {/* Stats */}
-          <div className="flex flex-col sm:flex-row gap-6 sm:gap-[60px]">
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-[60px] mt-4">
             {currentTestimonial.stats.map((stat, index) => (
               <div key={index} className="flex items-start gap-4 sm:gap-5">
                 <img
                   src="/landing/lucide-circle-check.svg"
                   alt="Check icon"
-                  className="w-[24px] h-[24px] sm:w-[34px] sm:h-[34px]"
+                  className="w-6 h-6 sm:w-8 sm:h-8 lg:w-[34px] lg:h-[34px]"
                 />
                 <div className="flex flex-col">
-                  <p className="text-xl sm:text-[28px] font-bold text-white">
+                  <p className="text-xl sm:text-2xl lg:text-[28px] font-bold text-white">
                     {stat.value}
                   </p>
-                  <p className="text-base sm:text-lg text-white">{stat.label}.</p>
+                  <p className="text-base font-nunito sm:text-lg text-white">
+                    {stat.label}
+                  </p>
                 </div>
               </div>
             ))}

@@ -38,7 +38,7 @@ export const HeroSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-between gap-8 mt-10 w-full max-w-[1250px] px-4 sm:px-6 lg:px-0">
+    <section className="flex flex-col lg:flex-row items-center justify-between gap-8 mt-40 w-full max-w-[1250px] px-4 sm:px-6 lg:px-0">
       {/* LEFT SIDE */}
       <div className="flex flex-col items-start justify-center gap-10 w-full max-w-full sm:max-w-[90%] lg:max-w-[600px]">
         <div className="flex items-end gap-2.5">

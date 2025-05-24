@@ -181,7 +181,7 @@ const SolutionCard = ({
           {title}
         </h3>
         <h4 className=" font-bold text-[#175779] text-xl mt-5">{subtitle}</h4>
-        <p className=" text-black text-lg mt-5">{description}</p>
+        <p className=" text-black text-lg mt-5 font-nunito">{description}</p>
         <Button className="mt-5 px-[50px] py-3 bg-[#175779] rounded-full  font-bold text-white text-base">
           Learn More
         </Button>
