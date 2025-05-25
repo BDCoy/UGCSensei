@@ -59,7 +59,7 @@ export default async function SignIn({
   return (
     <div className="flex flex-col md:flex-row w-full min-h-screen bg-[#f4f4f4]">
       {/* Left side - Image */}
-      <div className="hidden lg:block w-full md:w-[60%] h-[300px] md:h-screen relative overflow-hidden animate-slide-in-left">
+      <div className="hidden lg:block w-full md:w-[60%] relative overflow-hidden animate-slide-in-left">
         <img
           src="/landing/mobile-technology-1.jpg"
           alt="Business technology"

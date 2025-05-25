@@ -50,10 +50,8 @@ export default function OauthSignIn() {
           <input type="hidden" name="provider" value={provider.name} />
           <button
             type="submit"
-            className="w-[350px] rounded-full h-10 bg-white text-gray-700 font-medium  border border-gray-200 
+            className="w-full px-4 rounded-sm h-10 bg-white text-gray-700 font-medium  border border-gray-200 
                  hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 group"
-            // className="max-w-[350px] w-full rounded-full h-10 bg-white text-gray-700 font-medium
-            //      hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 group px-4"
           >
             <span className="mr-2">{provider.icon}</span>
             <span>{provider.displayName}</span>
