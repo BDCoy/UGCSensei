@@ -9,6 +9,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import Link from "next/link";
 
 const comparisonData = [
   {
@@ -162,10 +163,11 @@ export const WhyChooseUsSection = (): JSX.Element => {
           </TableBody>
         </Table>
       </div>
-
-      <Button className="px-8 sm:px-[50px] py-3 bg-[#175779] text-white rounded-[100px] font-bold text-base sm:text-lg hover:bg-[#124965] transition-colors">
-        Get Started Now
-      </Button>
+      <Link href="/signin/signup">
+        <Button className="px-8 sm:px-[50px] py-3 bg-[#175779] text-white rounded-[100px] font-bold text-base sm:text-lg hover:bg-[#124965] transition-colors">
+          Get Started Now
+        </Button>
+      </Link>
     </section>
   );
 };

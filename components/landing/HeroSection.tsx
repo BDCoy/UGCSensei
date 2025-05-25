@@ -2,6 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export const HeroSection = (): JSX.Element => {
   const partnerLogos = [
@@ -57,10 +58,11 @@ export const HeroSection = (): JSX.Element => {
           <br />
           <span className="text-black">Your Success!</span>
         </h1>
-
-        <Button className="px-6 py-5 text-base font-bold font-['Inter'] text-white bg-[#175779] rounded-full lg:px-[50px]">
-          Begin Your UGC Journey
-        </Button>
+        <Link href="/sigin/signup">
+          <Button className="px-6 py-5 text-base font-bold font-['Inter'] text-white bg-[#175779] rounded-full lg:px-[50px]">
+            Begin Your UGC Journey
+          </Button>
+        </Link>
 
         <div className="flex flex-wrap items-center gap-4 pt-8 lg:gap-[30px]">
           {partnerLogos.map((logo, index) => (

@@ -29,51 +29,59 @@ export default function EmailSignIn({
   };
 
   return (
-    <div className="my-8">
-      <form
-        noValidate={true}
-        className="mb-4"
-        onSubmit={(e) => handleSubmit(e)}
-      >
-        <div className="grid gap-2">
-          <div className="grid gap-4 text-left">
-            <label htmlFor="email">Email</label>
+    <form noValidate={true} className="mb-4" onSubmit={(e) => handleSubmit(e)}>
+      <p className="text-[22px] font-bold text-center mt-5">
+        Sign in with Magic Link
+      </p>
+
+      <div className="flex flex-col w-full max-w-[350px] gap-5 pt-[30px]">
+        <div className="flex flex-col gap-2.5">
+          <p className="text-sm text-left text-black">Email</p>
+          <div className="flex items-center h-10 px-[18px] py-2.5 rounded-[5px] bg-white border border-gray-200 focus-within:border-[#3b35e0] transition-all">
             <input
-              id="email"
-              placeholder="name@example.com"
               type="email"
+              placeholder="Enter your email..."
+              className="w-full text-sm text-black outline-none placeholder:text-[#b0b0b0]"
+              id="email"
               name="email"
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
-              className="w-full p-3 rounded-md  bg-red-50"
             />
           </div>
-          <Button
-            variant="slim"
-            type="submit"
-            className="mt-1"
-            loading={isSubmitting}
-            disabled={disableButton}
-          >
-            Sign in
-          </Button>
         </div>
-      </form>
-      {allowPassword && (
-        <>
-          <p>
-            <Link href="/signin/password_signin" className="font-light text-sm">
-              Sign in with email and password
-            </Link>
-          </p>
-          <p>
-            <Link href="/signin/signup" className="font-light text-sm">
-              Don&quot;t have an account? Sign up
-            </Link>
-          </p>
-        </>
-      )}
-    </div>
+      </div>
+
+      <div className="flex flex-col items-center gap-2.5 pt-[50px]">
+        <button
+          type="submit"
+          disabled={disableButton}
+          className="w-[350px] h-10 bg-[#175779] text-white font-medium rounded-[5px] hover:bg-[#71a6ca] transition-colors"
+        >
+          Sign in
+        </button>
+        {allowPassword && (
+          <>
+            <p className="text-sm font-semibold text-black mt-4">
+              Don&apos;t have an account?
+            </p>
+            <div className="flex flex-col items-center gap-1">
+              <Link
+                href="/signin/signup"
+                className="text-xs text-[#3b35e0] hover:underline transition-all"
+              >
+                Create an account
+              </Link>
+              <Link
+                href="/signin/password_signin"
+                className="text-xs text-[#3b35e0] hover:underline transition-all"
+              >
+                Sign in with password
+              </Link>
+            </div>
+          </>
+        )}
+      </div>
+    </form>
   );
 }

@@ -116,6 +116,7 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 interface SolutionCardProps {
   title: string;
@@ -182,9 +183,11 @@ const SolutionCard = ({
         </h3>
         <h4 className=" font-bold text-[#175779] text-xl mt-5">{subtitle}</h4>
         <p className=" text-black text-lg mt-5 font-nunito">{description}</p>
-        <Button className="mt-5 px-[50px] py-3 bg-[#175779] rounded-full  font-bold text-white text-base">
-          Learn More
-        </Button>
+        <Link href="/signin/signup">
+          <Button className="mt-5 px-[50px] py-3 bg-[#175779] rounded-full  font-bold text-white text-base">
+            Learn More
+          </Button>
+        </Link>
       </div>
     </div>
   );

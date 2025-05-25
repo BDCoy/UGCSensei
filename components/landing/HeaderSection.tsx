@@ -9,6 +9,8 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import Logo from "../ui/AuthForms/Logo";
 
 export const HeaderSection = (): JSX.Element => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,8 +21,8 @@ export const HeaderSection = (): JSX.Element => {
       setIsScrolled(window.scrollY > 20);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
@@ -31,28 +33,26 @@ export const HeaderSection = (): JSX.Element => {
   ];
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300 ${
         isScrolled ? "bg-white shadow-sm" : "bg-white"
       }`}
     >
       <div className="flex items-center justify-between h-[70px] px-4 lg:px-8 max-w-[1440px] mx-auto">
         {/* Logo */}
-        <a href="/" className="py-2">
-          <img
-            className="h-[28px] sm:h-[32px] lg:h-[40px] w-auto"
-            alt="UGC Sensei Logo"
-            src="/landing/ugc-sensei-logo-2.png"
-          />
-        </a>
+        <Logo />
 
         {/* Mobile menu button */}
-        <button 
+        <button
           className="lg:hidden flex items-center justify-center w-12 h-12 -mr-2 hover:bg-black/5 rounded-full transition-colors"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
-          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {isMenuOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
 
         {/* Desktop Navigation */}
@@ -73,23 +73,27 @@ export const HeaderSection = (): JSX.Element => {
           </NavigationMenu>
 
           <div className="flex items-center gap-5">
-            <Button 
-              variant="ghost" 
-              className="text-base font-semibold text-black hover:text-[#175779] hover:bg-transparent transition-colors px-4"
-            >
-              Log in
-            </Button>
-            <Button className="px-8 py-2.5 text-base font-semibold text-white bg-[#175779] rounded-full hover:bg-[#124965] transition-colors">
-              Sign up
-            </Button>
+            <Link href="/signin">
+              <Button
+                variant="ghost"
+                className="text-base font-semibold text-black hover:text-[#175779] hover:bg-transparent transition-colors px-4"
+              >
+                Log in
+              </Button>
+            </Link>
+            <Link href="/signin/signup">
+              <Button className="px-8 py-2.5 text-base font-semibold text-white bg-[#175779] rounded-full hover:bg-[#124965] transition-colors">
+                Sign up
+              </Button>
+            </Link>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div 
+          <div
             className="fixed inset-x-0 top-[70px] bg-white shadow-lg lg:hidden"
-            style={{ height: 'calc(100vh - 70px)' }}
+            style={{ height: "calc(100vh - 70px)" }}
           >
             <nav className="flex flex-col items-stretch p-4">
               {navItems.map((item, index) => (
@@ -102,17 +106,21 @@ export const HeaderSection = (): JSX.Element => {
                   {item.label}
                 </a>
               ))}
-              
+
               <div className="flex flex-col gap-3 mt-6">
-                <Button
-                  variant="ghost"
-                  className="w-full h-12 text-lg font-semibold text-black hover:text-[#175779] hover:bg-black/5 transition-colors"
-                >
-                  Log in
-                </Button>
-                <Button className="w-full h-12 text-lg font-semibold text-white bg-[#175779] rounded-full hover:bg-[#124965] transition-colors">
-                  Sign up
-                </Button>
+                <Link href="/signin">
+                  <Button
+                    variant="ghost"
+                    className="w-full h-12 text-lg font-semibold text-black hover:text-[#175779] hover:bg-black/5 transition-colors"
+                  >
+                    Log in
+                  </Button>
+                </Link>
+                <Link href="/signin/signup">
+                  <Button className="w-full h-12 text-lg font-semibold text-white bg-[#175779] rounded-full hover:bg-[#124965] transition-colors">
+                    Sign up
+                  </Button>
+                </Link>
               </div>
             </nav>
           </div>

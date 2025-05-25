@@ -9,11 +9,9 @@ import { OnDemandVideosSection } from "@/components/landing/OnDemandVideosSectio
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { WhyChooseUsSection } from "@/components/landing/WhyChooseUsSection";
 
-
-
 export default function LandingPage() {
   return (
-       <div className="flex flex-col items-center gap-8 bg-white border border-solid border-neutral-100">
+    <div className="flex flex-col items-center gap-8 bg-white border border-solid border-neutral-100 overflow-x-hidden">
       <div className="w-full max-w-[1440px] px-4 lg:px-8">
         <HeaderSection />
         <div className="flex flex-col items-center gap-16 md:gap-24">

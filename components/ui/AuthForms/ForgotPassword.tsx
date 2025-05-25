@@ -9,15 +9,11 @@ import { useState } from "react";
 
 // Define prop type with allowEmail boolean
 interface ForgotPasswordProps {
-  allowEmail: boolean;
   redirectMethod: string;
-  disableButton?: boolean;
 }
 
 export default function ForgotPassword({
-  allowEmail,
   redirectMethod,
-  disableButton,
 }: ForgotPasswordProps) {
   const router = redirectMethod === "client" ? useRouter() : null;
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -29,56 +25,45 @@ export default function ForgotPassword({
   };
 
   return (
-    <div className="my-8">
-      <form
-        noValidate={true}
-        className="mb-4"
-        onSubmit={(e) => handleSubmit(e)}
-      >
-        <div className="grid gap-2">
-          <div className="grid gap-4 text-left">
-            <label htmlFor="email">
-              Please enter your email address. 
-            </label>
+    <form noValidate={true} className="mb-4" onSubmit={(e) => handleSubmit(e)}>
+      <p className="text-[22px] font-bold text-center mt-5">
+        Reset your password
+      </p>
+
+      <div className="flex flex-col w-full max-w-[350px] gap-5 pt-[30px]">
+        <div className="flex flex-col gap-2.5">
+          <p className="text-sm text-left text-black">Email</p>
+          <div className="flex items-center h-10 px-[18px] py-2.5 rounded-[5px] bg-white border border-gray-200 focus-within:border-[#3b35e0] transition-all">
             <input
-              id="email"
-              placeholder="name@example.com"
               type="email"
+              placeholder="Enter your email..."
+              className="w-full text-sm text-black outline-none placeholder:text-[#b0b0b0]"
+              id="email"
               name="email"
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
-              className="w-full p-3 rounded-md bg-red-50"
             />
           </div>
-          <Button
-            variant="slim"
-            type="submit"
-            className="mt-1"
-            loading={isSubmitting}
-            disabled={disableButton}
-          >
-            Send Email
-          </Button>
         </div>
-      </form>
-      <p>
-        <Link href="/signin/password_signin" className="font-light text-sm">
-          Sign in with email and password
-        </Link>
-      </p>
-      {allowEmail && (
-        <p>
-          <Link href="/signin/email_signin" className="font-light text-sm">
-            Sign in via magic link
+      </div>
+
+      <div className="flex flex-col items-center gap-2.5 pt-[50px]">
+        <button
+          type="submit"
+          className="w-[350px] h-10 bg-[#175779] text-white font-medium rounded-[5px] hover:bg-[#71a6ca] transition-colors"
+        >
+          Send Reset Link
+        </button>
+        <div className="flex flex-col items-center gap-1 mt-4">
+          <Link
+            href="/signin/password_signin"
+            className="text-xs text-[#3b35e0] hover:underline transition-all"
+          >
+            Back to sign in
           </Link>
-        </p>
-      )}
-      <p>
-        <Link href="/signin/signup" className="font-light text-sm">
-          Don't have an account? Sign up
-        </Link>
-      </p>
-    </div>
+        </div>
+      </div>
+    </form>
   );
 }

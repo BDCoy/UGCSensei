@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { createClient } from "@/utils/supabase/server";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
@@ -15,6 +16,8 @@ import OauthSignIn from "@/components/ui/AuthForms/OauthSignIn";
 import ForgotPassword from "@/components/ui/AuthForms/ForgotPassword";
 import UpdatePassword from "@/components/ui/AuthForms/UpdatePassword";
 import SignUp from "@/components/ui/AuthForms/Signup";
+import Logo from "@/components/ui/AuthForms/Logo";
+import Footer from "@/components/ui/AuthForms/Footer";
 
 export default async function SignIn({
   params,
@@ -54,53 +57,103 @@ export default async function SignIn({
   }
 
   return (
-    <div className="min-h-screen flex flex-col justify-between items-center bg-[#f9f9f9] font-sans">
-      <Card
-        title={
-          viewProp === "forgot_password"
-            ? "Reset Password"
-            : viewProp === "update_password"
-            ? "Update Password"
-            : viewProp === "signup"
-            ? "Business account sign up"
-            : "Business account login"
-        }
-      >
-        {viewProp === "password_signin" && (
-          <PasswordSignIn
-            allowEmail={allowEmail}
-            redirectMethod={redirectMethod}
-          />
-        )}
-        {viewProp === "email_signin" && (
-          <EmailSignIn
-            allowPassword={allowPassword}
-            redirectMethod={redirectMethod}
-            disableButton={searchParams.disable_button}
-          />
-        )}
-        {viewProp === "forgot_password" && (
-          <ForgotPassword
-            allowEmail={allowEmail}
-            redirectMethod={redirectMethod}
-            disableButton={searchParams.disable_button}
-          />
-        )}
-        {viewProp === "update_password" && (
-          <UpdatePassword redirectMethod={redirectMethod} />
-        )}
-        {viewProp === "signup" && (
-          <SignUp allowEmail={allowEmail} redirectMethod={redirectMethod} />
-        )}
-        {viewProp !== "update_password" &&
-          viewProp !== "signup" &&
-          allowOauth && (
-            <>
-              <Separator text="Third-party sign-in" />
-              <OauthSignIn />
-            </>
-          )}
-      </Card>
+    // <div className="min-h-screen flex flex-col justify-between items-center bg-[#f9f9f9] font-sans">
+    //   <Card
+    //     title={
+    //       viewProp === "forgot_password"
+    //         ? "Reset Password"
+    //         : viewProp === "update_password"
+    //         ? "Update Password"
+    //         : viewProp === "signup"
+    //         ? "Business account sign up"
+    //         : "Business account login"
+    //     }
+    //   >
+    //     {viewProp === "password_signin" && (
+    //       <PasswordSignIn
+    // allowEmail={allowEmail}
+    // redirectMethod={redirectMethod}
+    //       />
+    //     )}
+    //     {viewProp === "email_signin" && (
+    //       <EmailSignIn
+    // allowPassword={allowPassword}
+    // redirectMethod={redirectMethod}
+    // disableButton={searchParams.disable_button}
+    //       />
+    //     )}
+    //     {viewProp === "forgot_password" && (
+    //       <ForgotPassword
+    // allowEmail={allowEmail}
+    // redirectMethod={redirectMethod}
+    // disableButton={searchParams.disable_button}
+    //       />
+    //     )}
+    //     {viewProp === "update_password" && (
+    //       <UpdatePassword redirectMethod={redirectMethod} />
+    //     )}
+    //     {viewProp === "signup" && (
+    //       <SignUp allowEmail={allowEmail} redirectMethod={redirectMethod} />
+    //     )}
+    //     {viewProp !== "update_password" &&
+    //       viewProp !== "signup" &&
+    //       allowOauth && (
+    //         <>
+    //           <Separator text="Third-party sign-in" />
+    //           <OauthSignIn />
+    //         </>
+    //       )}
+    //   </Card>
+    // </div>
+
+    <div className="flex flex-col md:flex-row w-full min-h-screen bg-[#f4f4f4]">
+      {/* Left side - Image */}
+      <div className="hidden lg:block w-full md:w-[60%] h-[300px] md:h-screen relative overflow-hidden animate-slide-in-left">
+        <img
+          src="/landing/mobile-technology-1.jpg"
+          alt="Business technology"
+          className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/30 to-transparent" />
+      </div>
+
+      {/* Right side - Auth form */}
+      <div className="w-full md:w-[40%] flex flex-col justify-between min-h-[calc(100vh-300px)] md:min-h-screen p-5 lg:p-10 animate-slide-in-right">
+        <div className="flex flex-col items-center justify-start flex-grow pt-10 md:pt-20">
+          <div className="animate-fade-in">
+            <Logo />
+          </div>
+
+          <div className="w-full flex flex-col items-center animate-slide-up">
+            {viewProp === "signup" && (
+              <SignUp allowEmail={allowEmail} redirectMethod={redirectMethod} />
+            )}
+            {viewProp === "password_signin" && (
+              <PasswordSignIn
+                allowEmail={allowEmail}
+                redirectMethod={redirectMethod}
+              />
+            )}
+            {viewProp === "email_signin" && (
+              <EmailSignIn
+                allowPassword={allowPassword}
+                redirectMethod={redirectMethod}
+                disableButton={searchParams.disable_button}
+              />
+            )}
+            {viewProp === "forgot_password" && (
+              <ForgotPassword redirectMethod={redirectMethod} />
+            )}
+            {viewProp === "update_password" && (
+              <UpdatePassword redirectMethod={redirectMethod} />
+            )}
+          </div>
+        </div>
+
+        <div className="animate-fade-in">
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }

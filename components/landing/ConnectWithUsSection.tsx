@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
+import Link from "next/link";
 
 export const ConnectWithUsSection = (): JSX.Element => {
   const categories = [
@@ -52,8 +53,8 @@ export const ConnectWithUsSection = (): JSX.Element => {
         </h2>
         <p className="text-center text-base sm:text-lg font-nunito max-w-[800px]">
           Each creator is chosen for their unique voice, engagement, and ability
-          to craft authentic content. Find the &apos;Sensei-Approved&apos; match to
-          champion your brand.
+          to craft authentic content. Find the &apos;Sensei-Approved&apos; match
+          to champion your brand.
         </p>
       </div>
 
@@ -102,9 +103,7 @@ export const ConnectWithUsSection = (): JSX.Element => {
                     {creator.location}
                   </p>
                 </div>
-                <div
-                  className="flex justify-start items-center flex-grow-0 flex-shrink-0 relative overflow-hidden gap-2.5 p-2.5 rounded-[100px] bg-white"
-                >
+                <div className="flex justify-start items-center flex-grow-0 flex-shrink-0 relative overflow-hidden gap-2.5 p-2.5 rounded-[100px] bg-white">
                   <svg
                     width="13"
                     height="12"
@@ -144,9 +143,11 @@ export const ConnectWithUsSection = (): JSX.Element => {
       </div>
 
       {/* Explore button */}
-      <Button className="px-8 sm:px-[50px] py-3 bg-[#175779] rounded-full  font-bold text-base sm:text-lg text-white hover:bg-[#124965] transition-colors">
-        Explore All Creators
-      </Button>
+      <Link href="/signin/signup">
+        <Button className="px-8 sm:px-[50px] py-3 bg-[#175779] rounded-full  font-bold text-base sm:text-lg text-white hover:bg-[#124965] transition-colors">
+          Explore All Creators
+        </Button>
+      </Link>
     </section>
   );
 };

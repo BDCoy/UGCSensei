@@ -8,6 +8,7 @@ import {
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 export const CtaSection = (): JSX.Element => {
   const features = [
@@ -91,13 +92,14 @@ export const CtaSection = (): JSX.Element => {
               ))}
             </div>
           </div>
-
-          <Button className="flex w-[278px] gap-2.5 px-[50px] py-3 items-center bg-[#175779] rounded-[100px] text-white hover:bg-[#124a68] mt-4">
-            <span className="font-['Inter',Helvetica] font-bold text-base whitespace-nowrap">
-              Schedule your Demo
-            </span>
-            <ArrowRightIcon className="w-[18px] h-[18px]" />
-          </Button>
+          <Link href="/signin/signup">
+            <Button className="flex w-[278px] gap-2.5 px-[50px] py-3 items-center bg-[#175779] rounded-[100px] text-white hover:bg-[#124a68] mt-4">
+              <span className="font-['Inter',Helvetica] font-bold text-base whitespace-nowrap">
+                Schedule your Demo
+              </span>
+              <ArrowRightIcon className="w-[18px] h-[18px]" />
+            </Button>
+          </Link>
         </div>
       </CardContent>
     </Card>
