@@ -33,7 +33,7 @@ export default function ForgotPassword({
       <div className="flex flex-col w-full max-w-[350px] gap-5 pt-[30px]">
         <div className="flex flex-col gap-2.5">
           <p className="text-sm text-left text-black">Email</p>
-          <div className="flex items-center h-10 px-[18px] py-2.5 rounded-[5px] bg-white border border-gray-200 focus-within:border-[#3b35e0] transition-all">
+          <div className="flex items-center h-10 px-[18px] py-2.5 rounded-full bg-white border border-gray-200 focus-within:border-[#3b35e0] transition-all">
             <input
               type="email"
               placeholder="Enter your email..."
@@ -51,7 +51,7 @@ export default function ForgotPassword({
       <div className="flex flex-col items-center gap-2.5 pt-[50px]">
         <button
           type="submit"
-          className="w-[350px] h-10 bg-[#175779] text-white font-medium rounded-[5px] hover:bg-[#71a6ca] transition-colors"
+          className="w-[350px] h-10 bg-[#175779] text-white font-medium rounded-full hover:bg-[#71a6ca] transition-colors"
         >
           Send Reset Link
         </button>

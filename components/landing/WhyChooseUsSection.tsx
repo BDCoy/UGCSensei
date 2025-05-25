@@ -110,7 +110,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
                 <TableCell
                   className={`h-16 sm:h-20 bg-white border-l border-r border-[#175779] ${
                     index === comparisonData.length - 1
-                      ? "border-b rounded-bl-lg"
+                      ? "border-b rounded-b-xl bg-red-300"
                       : ""
                   }`}
                 >

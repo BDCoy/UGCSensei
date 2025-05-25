@@ -1,9 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Button from "@/components/ui/Button/Button";
 import { signInWithOAuth } from "@/utils/auth-helpers/client";
 import { type Provider } from "@supabase/supabase-js";
-import { Github } from "lucide-react";
 import { useState } from "react";
 
 type OAuthProviders = {
@@ -21,14 +20,13 @@ export default function OauthSignIn() {
     // },
     {
       name: "google",
-      displayName: "Google",
+      displayName: "Continue with Google",
       icon: (
-        <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
-          <path
-            fill="currentColor"
-            d="M12.545,10.239v3.821h5.445c-0.712,2.315-2.647,3.972-5.445,3.972c-3.332,0-6.033-2.701-6.033-6.032s2.701-6.032,6.033-6.032c1.498,0,2.866,0.549,3.921,1.453l2.814-2.814C17.503,2.988,15.139,2,12.545,2C7.021,2,2.543,6.477,2.543,12s4.478,10,10.002,10c8.396,0,10.249-7.85,9.426-11.748L12.545,10.239z"
-          />
-        </svg>
+        <img
+          src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png"
+          alt="Google"
+          className="w-5 h-5 object-contain group-hover:animate-scale"
+        />
       ),
     },
     /* Add desired OAuth providers here */
@@ -42,7 +40,7 @@ export default function OauthSignIn() {
   };
 
   return (
-    <div className="mt-8">
+    <div>
       {oAuthProviders.map((provider) => (
         <form
           key={provider.name}
@@ -50,15 +48,16 @@ export default function OauthSignIn() {
           onSubmit={(e) => handleSubmit(e)}
         >
           <input type="hidden" name="provider" value={provider.name} />
-          <Button
-            variant="slim"
+          <button
             type="submit"
-            className="w-full"
-            loading={isSubmitting}
+            className="w-[350px] rounded-full h-10 bg-white text-gray-700 font-medium  border border-gray-200 
+                 hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 group"
+            // className="max-w-[350px] w-full rounded-full h-10 bg-white text-gray-700 font-medium
+            //      hover:bg-gray-50 transition-colors flex items-center justify-center gap-2 group px-4"
           >
             <span className="mr-2">{provider.icon}</span>
             <span>{provider.displayName}</span>
-          </Button>
+          </button>
         </form>
       ))}
     </div>

@@ -57,55 +57,6 @@ export default async function SignIn({
   }
 
   return (
-    // <div className="min-h-screen flex flex-col justify-between items-center bg-[#f9f9f9] font-sans">
-    //   <Card
-    //     title={
-    //       viewProp === "forgot_password"
-    //         ? "Reset Password"
-    //         : viewProp === "update_password"
-    //         ? "Update Password"
-    //         : viewProp === "signup"
-    //         ? "Business account sign up"
-    //         : "Business account login"
-    //     }
-    //   >
-    //     {viewProp === "password_signin" && (
-    //       <PasswordSignIn
-    // allowEmail={allowEmail}
-    // redirectMethod={redirectMethod}
-    //       />
-    //     )}
-    //     {viewProp === "email_signin" && (
-    //       <EmailSignIn
-    // allowPassword={allowPassword}
-    // redirectMethod={redirectMethod}
-    // disableButton={searchParams.disable_button}
-    //       />
-    //     )}
-    //     {viewProp === "forgot_password" && (
-    //       <ForgotPassword
-    // allowEmail={allowEmail}
-    // redirectMethod={redirectMethod}
-    // disableButton={searchParams.disable_button}
-    //       />
-    //     )}
-    //     {viewProp === "update_password" && (
-    //       <UpdatePassword redirectMethod={redirectMethod} />
-    //     )}
-    //     {viewProp === "signup" && (
-    //       <SignUp allowEmail={allowEmail} redirectMethod={redirectMethod} />
-    //     )}
-    //     {viewProp !== "update_password" &&
-    //       viewProp !== "signup" &&
-    //       allowOauth && (
-    //         <>
-    //           <Separator text="Third-party sign-in" />
-    //           <OauthSignIn />
-    //         </>
-    //       )}
-    //   </Card>
-    // </div>
-
     <div className="flex flex-col md:flex-row w-full min-h-screen bg-[#f4f4f4]">
       {/* Left side - Image */}
       <div className="hidden lg:block w-full md:w-[60%] h-[300px] md:h-screen relative overflow-hidden animate-slide-in-left">
@@ -148,6 +99,8 @@ export default async function SignIn({
               <UpdatePassword redirectMethod={redirectMethod} />
             )}
           </div>
+        <Separator text="Or continue with" />
+        <OauthSignIn />
         </div>
 
         <div className="animate-fade-in">
