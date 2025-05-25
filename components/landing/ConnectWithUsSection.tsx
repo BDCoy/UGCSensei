@@ -116,9 +116,9 @@ export const ConnectWithUsSection = (): JSX.Element => {
                     <path
                       d="M1.33337 1H11.3334M11.3334 1V11M11.3334 1L1.33337 11"
                       stroke="black"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></path>
                   </svg>
                 </div>

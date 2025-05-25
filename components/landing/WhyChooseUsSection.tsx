@@ -69,7 +69,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
       </div>
 
       <div className="w-full overflow-x-auto rounded-[10px]">
-        <Table className="min-w-[600px] border-collapse overflow-hidden rounded-[10px]">
+       <Table className="min-w-[600px] border-separate border-spacing-0 overflow-hidden rounded-[10px]">
           <TableHeader>
             <TableRow>
               <TableHead className="bg-white h-16 sm:h-20 w-[40%] min-w-[180px] text-base sm:text-lg">
@@ -110,7 +110,7 @@ export const WhyChooseUsSection = (): JSX.Element => {
                 <TableCell
                   className={`h-16 sm:h-20 bg-white border-l border-r border-[#175779] ${
                     index === comparisonData.length - 1
-                      ? "border-b rounded-b-xl bg-red-300"
+                      ? "border-b rounded-b-[10px]"
                       : ""
                   }`}
                 >
