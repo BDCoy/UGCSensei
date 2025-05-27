@@ -58,7 +58,7 @@ const comparisonData = [
 
 export const WhyChooseUsSection = (): JSX.Element => {
   return (
-    <section id="features" className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-[50px] w-full py-16 sm:py-20 lg:py-[100px] px-4 sm:px-6">
+    <section id="features" className="flex flex-col items-center gap-8 sm:gap-10 lg:gap-[50px] w-full  px-4 sm:px-6">
       <div className="flex flex-col items-center gap-5 max-w-[800px] mx-auto text-center">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-black leading-tight">
           Why Partner with a UGC Sensei?

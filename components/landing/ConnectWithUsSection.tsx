@@ -39,7 +39,7 @@ export const ConnectWithUsSection = (): JSX.Element => {
   ];
 
   return (
-    <section id="creators" className="relative w-full py-16 sm:py-20 lg:py-[100px] flex flex-col items-center gap-8 sm:gap-10 lg:gap-[50px]">
+    <section id="creators" className="relative w-full sm:py-20 lg:py-[100px] flex flex-col items-center gap-8 sm:gap-10 lg:gap-[50px]">
       {/* Background blur elements */}
       <div className="absolute w-[319px] h-[321px] top-[203px] left-[-61px] bg-[#ffddb5] rounded-full blur-[175px]" />
       <div className="absolute w-[319px] h-[321px] top-[834px] left-[1153px] bg-[#ffddb5] rounded-full blur-[175px]" />

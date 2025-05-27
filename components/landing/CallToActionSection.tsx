@@ -24,7 +24,7 @@ export const CallToActionSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full mt-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full mx-auto px-4 sm:px-6 lg:px-8">
       {/* Heading */}
       <div className="pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-10 lg:pb-12 text-center max-w-[800px] mx-auto">
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-black ">
