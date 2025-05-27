@@ -11,7 +11,7 @@ const testimonials = [
     author: {
       name: "Lorenzo S.",
       position: "CEO",
-      image: "/landing/2198423539-1.png",
+      image: "/landing/2198423539-2.png",
       video: "/landing/image-1.png",
     },
     stats: [
@@ -26,7 +26,7 @@ const testimonials = [
     author: {
       name: "Erick D.",
       position: "Founder",
-      image: "/landing/2198423539-1-2.png",
+      image: "/landing/2198423539-3.jpeg",
       video: "/landing/image-1-2.png",
     },
     stats: [
@@ -37,11 +37,11 @@ const testimonials = [
   {
     company: "Renaud's Patisserie",
     quote:
-      "UGC Sensei has been a lifesaver for our bakery! I used to struggle when customers wanted engaging video content for our pastries but had no existing footage and a tight deadline. As someone who's definitely not a video producer, being able to simply tap into UGC Sensei and get 10 fantastic videos for a grand has been a game-changer. Now, we always have a solid starting toolkit of delicious content ready to go!",
+      "UGC Sensei has been a lifesaver for our bakery! I used to struggle when customers wanted engaging video content for our pastries but had no existing footage and a tight deadline. As someone who's definitely not a video producer, being able to simply tap into UGC Sensei and get 10 fantastic videos. Now, we always have a solid starting toolkit of delicious content ready to go!",
     author: {
       name: "Renaud G.",
       position: "Owner",
-      image: "/landing/2198423539-1-3.png",
+      image: "/landing/2198423539-5.jpeg",
       video: "/landing/image-1-3.png",
     },
     stats: [
@@ -67,7 +67,7 @@ export const TestimonialsSection = (): JSX.Element => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <Card className="relative z-10 flex flex-col justify-start items-start gap-6 sm:gap-8 lg:gap-[30px] p-6 sm:p-8 lg:p-[50px] rounded-[20px] bg-[#175779] shadow-lg w-full overflow-hidden">
+    <Card id="testimonials" className="relative z-10 flex flex-col justify-start items-start gap-6 sm:gap-8 lg:gap-[30px] p-6 sm:p-8 lg:p-[50px] rounded-[20px] bg-[#175779] shadow-lg w-full overflow-hidden">
       <div className="bg-[url('/landing/grid-1-1.png')] bg-cover absolute top-0 bottom-0 left-0 right-0 opacity-5 -z-10"></div>
 
       {/* Header Text */}

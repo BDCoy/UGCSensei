@@ -26,10 +26,10 @@ export const HeaderSection = (): JSX.Element => {
   }, []);
 
   const navItems = [
-    { label: "Features", href: "#" },
-    { label: "Creators", href: "#" },
-    { label: "Services", href: "#" },
-    { label: "Success Stories", href: "#" },
+    { label: "Features", href: "#features" },
+    { label: "Creators", href: "#creators" },
+    { label: "Services", href: "#services" },
+    { label: "Success Stories", href: "#testimonials" },
   ];
 
   return (

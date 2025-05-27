@@ -19,27 +19,27 @@ export const ConnectWithUsSection = (): JSX.Element => {
 
   const creators = [
     {
-      name: "Tonia L.",
+      name: "Kendra M.",
       location: "California",
-      profileImage: "/landing/2198423539-1.png",
+      profileImage: "/landing/kendra.png",
       contentImage: "/landing/image-1.png",
     },
     {
-      name: "Samuel P.",
+      name: "Michael M.",
       location: "Georgia",
-      profileImage: "/landing/2198423539-1-1.png",
+      profileImage: "/landing/michael.jpeg",
       contentImage: "/landing/image-1-1.png",
     },
     {
-      name: "Regan T.",
+      name: "Isabella C.",
       location: "Florida",
-      profileImage: "/landing/2198423539-1-2.png",
+      profileImage: "/landing/isabella.png",
       contentImage: "/landing/image-1-2.png",
     },
   ];
 
   return (
-    <section className="relative w-full py-16 sm:py-20 lg:py-[100px] flex flex-col items-center gap-8 sm:gap-10 lg:gap-[50px]">
+    <section id="creators" className="relative w-full py-16 sm:py-20 lg:py-[100px] flex flex-col items-center gap-8 sm:gap-10 lg:gap-[50px]">
       {/* Background blur elements */}
       <div className="absolute w-[319px] h-[321px] top-[203px] left-[-61px] bg-[#ffddb5] rounded-full blur-[175px]" />
       <div className="absolute w-[319px] h-[321px] top-[834px] left-[1153px] bg-[#ffddb5] rounded-full blur-[175px]" />

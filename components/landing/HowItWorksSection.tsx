@@ -8,27 +8,28 @@ const steps = [
     number: "01.",
     icon: "/landing/search-user-1.svg",
     iconAlt: "Search user",
-    title: "Find the right Creators",
+    title: "Discover the Perfect Creators",
     description:
-      "Filter creators by demographics, interests, or lifestyle, and invite the ones who best match your needs. Make your brief public and let creators apply.",
+      "Search and filter creators based on demographics, interests, and lifestyle to find the ideal fit for your brand. You can also publish your brief and let interested creators apply directly.",
   },
   {
     number: "02.",
     icon: "/landing/customize-1.svg",
     iconAlt: "Customize",
-    title: "Customize your Order",
+    title: "Tailor Your Order",
     description:
-      "Select your video details, choose editing preferences, and customize your brief yourself or leave it to the creator's expertise.",
+      "Define your video requirements, set editing preferences, and personalize your brief—or let the creator handle the creative direction for you.",
   },
   {
     number: "03.",
     icon: "/landing/get-video-1.svg",
     iconAlt: "Get video",
-    title: "Get your Videos",
+    title: "Receive Your Videos",
     description:
-      "Sit back and relax. Your creator will deliver your video in just 7-12 days after receiving your product, if you choose to ship it.",
+      "Once your product is delivered (if shipping is required), your creator will produce and deliver your video within 7–12 days—no effort needed on your part.",
   },
 ];
+
 
 export const HowItWorksSection = (): JSX.Element => {
   return (

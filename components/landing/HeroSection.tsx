@@ -48,18 +48,18 @@ export const HeroSection = (): JSX.Element => {
             alt="Thousands of creators"
             src="/landing/thousands-of-creators-1.png"
           />
-          <h2 className="font-['Inter'] font-bold text-lg sm:text-xl text-black whitespace-nowrap">
+          <h2 className=" font-bold text-lg sm:text-xl text-black whitespace-nowrap">
             Thousands of Creators
           </h2>
         </div>
 
-        <h1 className="font-['Inter'] font-bold text-3xl sm:text-4xl md:text-6xl lg:text-[74px] leading-[1.1]">
+        <h1 className=" font-bold text-3xl sm:text-4xl md:text-6xl lg:text-[74px] leading-[1.1]">
           <span className="text-[#175779]">One Goal:</span>
           <br />
           <span className="text-black">Your Success!</span>
         </h1>
         <Link href="/sigin/signup">
-          <Button className="px-6 py-5 text-base font-bold font-['Inter'] text-white bg-[#175779] rounded-full lg:px-[50px]">
+          <Button className="px-6 py-5 text-base font-bold  text-white bg-[#175779] rounded-full lg:px-[50px]">
             Begin Your UGC Journey
           </Button>
         </Link>
